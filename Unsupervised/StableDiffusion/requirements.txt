@@ -1,0 +1,28 @@
+# Tell pip to look up torch wheels from PyTorch's CUDA-12.4 index FIRST.
+# Without this line, plain `pip install` pulls the default torch wheel,
+# which on recent torch is built against CUDA 13 - too new for NVIDIA
+# drivers in the 5xx.xx series (like the WSL2 driver that ships with
+# Windows 11 today). The cu124 index gives us a CUDA-12.4 build that
+# matches `nvidia-smi`'s reported CUDA version.
+--extra-index-url https://download.pytorch.org/whl/cu124
+
+# Core deep learning framework (CUDA 12.4 build via the index above)
+torch>=2.0.0
+
+# Hugging Face Stable Diffusion pipeline
+diffusers>=0.27.0
+
+# Required by the CLIP text encoder inside the pipeline
+transformers>=4.36.0
+
+# Optimised model loading and execution on the GPU
+accelerate>=0.27.0
+
+# Fast/secure format used by the model weights
+safetensors>=0.4.0
+
+# Numerical helpers used by some samplers/schedulers
+scipy>=1.10.0
+
+# Image processing - used to display and save the output image
+Pillow>=10.0.0

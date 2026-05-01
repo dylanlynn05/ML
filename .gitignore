@@ -1,0 +1,39 @@
+# IDE / editor
+.idea/
+.vscode/
+*.iml
+
+# Python
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local data / model caches (do not commit large binaries)
+datasets/
+data/
+*.h5
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+
+# Stable Diffusion / Hugging Face local caches
+.cache/
+huggingface/
+
+# Build artifacts
+dist/
+build/
