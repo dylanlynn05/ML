@@ -8,11 +8,13 @@ A collection of machine-learning and deep-learning assignments by **Dylan Lynn**
 ML/
 ├── Supervised/                       # Labeled data — regression & classification
 │   ├── Housing/                      # California / Boston housing regression
-│   └── Assignment2-LossFunctions/    # Loss functions + CNN shape math (Assignment 2)
+│   ├── Assignment2-LossFunctions/    # Loss functions + CNN shape math (Assignment 2)
+│   └── FakeNewsDetection/            # TF-IDF + NB / Logistic Regression on REAL vs. FAKE
 │
 ├── Unsupervised/                     # No labels — generative models, clustering, etc.
 │   ├── DCGAN-SVHN/                   # Deep Convolutional GAN trained on SVHN
-│   └── StableDiffusion/              # Pre-trained Stable Diffusion text-to-image
+│   ├── StableDiffusion/              # Pre-trained Stable Diffusion text-to-image
+│   └── CustomerSegmentation/         # K-Means clustering for advertising personas
 │
 └── Semi-supervised/                  # Mix of a small labeled set + large unlabeled set
     └── assignment1_doe_john.ipynb    # Assignment 1 template
@@ -22,8 +24,8 @@ ML/
 
 | Paradigm | What the model sees during training | Examples in this repo |
 |---|---|---|
-| **Supervised** | Inputs **and** their labels (`x`, `y`) | Housing price regression, Assignment 2 (losses for regression + classification) |
-| **Unsupervised** | Inputs only (`x`) — the model discovers structure | DCGAN on SVHN (learns `p(x)`), Stable Diffusion (denoising diffusion) |
+| **Supervised** | Inputs **and** their labels (`x`, `y`) | Housing price regression, Assignment 2 (losses for regression + classification), Fake News Detection (text classification) |
+| **Unsupervised** | Inputs only (`x`) — the model discovers structure | DCGAN on SVHN (learns `p(x)`), Stable Diffusion (denoising diffusion), Customer Segmentation (K-Means clustering) |
 | **Semi-supervised** | A small labeled set + a large unlabeled set | Assignment 1 |
 
 > **Why are GANs and Diffusion models in `Unsupervised/`?** Generative models such as DCGAN and Stable Diffusion are trained to model the data distribution `p(x)` directly without requiring class labels. They are the canonical example of *unsupervised generative learning*. (Diffusion models are sometimes called "self-supervised" because the training target is constructed from the input itself, but they don't use external labels.)
@@ -54,8 +56,10 @@ Each project folder contains its own `README.md` with details on data, model arc
 
 - [`Supervised/Housing/`](Supervised/Housing/) — regression on housing prices
 - [`Supervised/Assignment2-LossFunctions/`](Supervised/Assignment2-LossFunctions/) — loss functions and CNN shape math
+- [`Supervised/FakeNewsDetection/`](Supervised/FakeNewsDetection/) — TF-IDF + Naive Bayes / Logistic Regression for REAL vs. FAKE news
 - [`Unsupervised/DCGAN-SVHN/`](Unsupervised/DCGAN-SVHN/) — DCGAN trained on SVHN
 - [`Unsupervised/StableDiffusion/`](Unsupervised/StableDiffusion/) — text-to-image with `CompVis/stable-diffusion-v1-4`
+- [`Unsupervised/CustomerSegmentation/`](Unsupervised/CustomerSegmentation/) — K-Means clustering of mall customers into advertising personas
 - [`Semi-supervised/`](Semi-supervised/) — assignment 1 template
 
 ## Notes on what's *not* committed
